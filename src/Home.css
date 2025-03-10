@@ -1,0 +1,140 @@
+/* General Styles */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9fafb;
+}
+
+.container {
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container-custom {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #ffffff;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #1a1a1a;
+  width: auto;
+  display: flex;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links-custom {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar .nav-links li {
+  margin-left: 20px;
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: #4a5568;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+  color: #1a1a1a;
+}
+
+.navbar .nav-links a.btn-login,
+.navbar .nav-links a.btn-register {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.navbar .nav-links a.btn-login {
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+}
+
+.navbar .nav-links a.btn-register {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.navbar .nav-links a.btn-register:hover {
+  background-color: #333333;
+}
+
+/* Hero Section Styles */
+.hero {
+  padding: 120px 0;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #4a5568;
+  margin-bottom: 30px;
+}
+
+.hero .btn-primary {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn-primary:hover {
+  background-color: #333333;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer p {
+  margin: 0;
+  color: #4a5568;
+  font-size: 14px;
+}
