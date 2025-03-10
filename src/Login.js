@@ -13,10 +13,13 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5002/login", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "employee-management-ws.vercel.app/login",
+        {
+          username,
+          password,
+        }
+      );
       console.log(response.data);
       localStorage.setItem("token", response.data.token);
       alert("Login successful!");
