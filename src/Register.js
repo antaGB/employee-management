@@ -1,27 +1,32 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5002";
+const API_URL = "https://employee-management-ws.vercel.app";
 
 function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+
     try {
       const response = await axios.post(`${API_URL}/register`, {
         username,
         password,
       });
-      console.log(response.data);
+      console.log("Registration successful:", response.data);
       alert("Registration successful!");
+      navigate("/login");
     } catch (error) {
       const errorMessage =
         error.response?.data?.error || "Registration failed!";
+      setError(errorMessage);
       console.error("Registration error:", errorMessage);
-      alert(errorMessage);
     }
   };
 

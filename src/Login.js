@@ -4,31 +4,33 @@ import { Link, useNavigate } from "react-router-dom";
 
 import "./User.css";
 
+// Update to new domain
+const API_URL = "https://employee-management-ws.vercel.app";
+
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+
     try {
-      const response = await axios.post(
-        "employee-management-ws.vercel.app/login",
-        {
-          username,
-          password,
-        }
-      );
-      console.log(response.data);
+      const response = await axios.post(`${API_URL}/login`, {
+        username,
+        password,
+      });
       localStorage.setItem("token", response.data.token);
-      alert("Login successful!");
-      if (true) {
-        navigate("/dashboard");
-      }
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+      console.log("Login successful:", response.data);
+      navigate("/dashboard");
     } catch (error) {
-      console.error(error);
-      alert("Login failed!");
+      const errorMessage = error.response?.data?.error || "Login failed!";
+      setError(errorMessage);
+      console.error("Login error:", errorMessage);
     }
   };
 
